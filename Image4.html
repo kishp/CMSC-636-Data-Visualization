@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Image4</title>
+    <link href="https://rawgithub.com/palantir/plottable/develop/plottable.css" rel="stylesheet"/>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://rawgithub.com/palantir/plottable/develop/plottable.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<div id="container">
+  <svg id="image4" width="1000" height="1000"></svg>
+</div>
+
+  </head>
+  <body>
+  </body>
+  <script>  
+  
+     d3.select("body").append("p").text("Number of Patients suffered from TBI, 'Patient ID' wise.");
+	d3.select("body").append("p").text("Area Plot.");
+  
+	var xScale = new Plottable.Scales.Category();
+var yScale = new Plottable.Scales.Linear();
+var data = [{ x:382268, y:382 },
+               { x:382269, y:115 },
+               { x:3822046, y:54},
+               { x:3822077, y:227},
+			   { x:3822084, y:19},
+			   { x:3822102, y:478},
+			   { x:3822108, y:144},
+			   { x:3822163, y:96},
+			   { x:3822164, y:75},
+			   { x:3822201, y:33},
+			   { x:3822204, y:25},
+			   { x:3822241, y:111},
+			   { x:3822263, y:57},
+			   { x:3822264, y:41},
+			   { x:3822268, y:116},
+			   { x:3822280, y:187},
+			   { x:3822286, y:41},
+			   { x:3822317, y:48},
+			   { x:3822333, y:49},
+			   { x:3822355, y:124},
+			   { x:3822364, y:219},
+			   { x:3822416, y:254},
+			   { x:3822432, y:35},
+			   { x:3822438, y:66},
+			   { x:3822453, y:200},
+			   { x:3822530, y:267},
+			   { x:3822536, y:247},
+			   { x:3822546, y:93},
+			   { x:3822599, y:180},
+			   { x:3822611, y:362},
+			   { x:3822646, y:68},
+			   { x:3822663, y:125},
+			   { x:3822668, y:44},
+			   { x:3822670, y:52},
+			   { x:3822740, y:12},
+			   { x:3822762, y:33},
+			   { x:3822763, y:367},
+			   { x:3822767, y:207},
+			   { x:3822794, y:130},
+			   { x:3822871, y:198},
+			   { x:3822986, y:98}
+			   ];
+
+var plot = new Plottable.Plots.Area()
+  .addDataset(new Plottable.Dataset(data))
+  .x(function(d) { return d.x; }, xScale)
+  .y(function(d) { return d.y; }, yScale)
+  .renderTo("svg#image4");
+
+window.addEventListener("resize", function() {
+  plot.redraw();
+});
+  </script>
+</html>

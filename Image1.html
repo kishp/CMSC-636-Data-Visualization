@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Image2</title>
+    <link href="https://rawgithub.com/palantir/plottable/develop/plottable.css" rel="stylesheet"/>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://rawgithub.com/palantir/plottable/develop/plottable.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<div id="container">
+  <svg id="image2" width="1000" height="1000"></svg>
+</div>
+
+  </head>
+  <body>
+  </body>
+  <script>  
+  
+    d3.select("body").append("p").text("Number of Patients suffered from TBI, 'Patient ID' wise.");
+	d3.select("body").append("p").text("Pie Chart.");
+	window.onload = function(){
+  var store = [{ Age_Group:"Patient ID: 382268", Total:382 },
+               { Age_Group:"Patient ID: 382269", Total:115 },
+               { Age_Group:"Patient ID: 3822046", Total:54},
+               { Age_Group:"Patient ID: 3822077", Total:227},
+			   { Age_Group:"Patient ID: 3822084", Total:19},
+			   { Age_Group:"Patient ID: 3822102", Total:478},
+			   { Age_Group:"Patient ID: 3822108", Total:144},
+			   { Age_Group:"Patient ID: 3822163", Total:96},
+			   { Age_Group:"Patient ID: 3822164", Total:75},
+			   { Age_Group:"Patient ID: 3822201", Total:33},
+			   { Age_Group:"Patient ID: 3822204", Total:25},
+			   { Age_Group:"Patient ID: 3822241", Total:111},
+			   { Age_Group:"Patient ID: 3822263", Total:57},
+			   { Age_Group:"Patient ID: 3822264", Total:41},
+			   { Age_Group:"Patient ID: 3822268", Total:116},
+			   { Age_Group:"Patient ID: 3822280", Total:187},
+			   { Age_Group:"Patient ID: 3822286", Total:41},
+			   { Age_Group:"Patient ID: 3822317", Total:48},
+			   { Age_Group:"Patient ID: 3822333", Total:49},
+			   { Age_Group:"Patient ID: 3822355", Total:124},
+			   { Age_Group:"Patient ID: 3822364", Total:219},
+			   { Age_Group:"Patient ID: 3822416", Total:254},
+			   { Age_Group:"Patient ID: 3822432", Total:35},
+			   { Age_Group:"Patient ID: 3822438", Total:66},
+			   { Age_Group:"Patient ID: 3822453", Total:200},
+			   { Age_Group:"Patient ID: 3822530", Total:267},
+			   { Age_Group:"Patient ID: 3822536", Total:247},
+			   { Age_Group:"Patient ID: 3822546", Total:93},
+			   { Age_Group:"Patient ID: 3822599", Total:180},
+			   { Age_Group:"Patient ID: 3822611", Total:362},
+			   { Age_Group:"Patient ID: 3822646", Total:68},
+			   { Age_Group:"Patient ID: 3822663", Total:125},
+			   { Age_Group:"Patient ID: 3822668", Total:44},
+			   { Age_Group:"Patient ID: 3822670", Total:52},
+			   { Age_Group:"Patient ID: 3822740", Total:12},
+			   { Age_Group:"Patient ID: 3822762", Total:33},
+			   { Age_Group:"Patient ID: 3822763", Total:367},
+			   { Age_Group:"Patient ID: 3822767", Total:207},
+			   { Age_Group:"Patient ID: 3822794", Total:130},
+			   { Age_Group:"Patient ID: 3822871", Total:198},
+			   { Age_Group:"Patient ID: 3822986", Total:98}
+			   ];
+  var colorScale = new Plottable.Scales.Color();
+  var legend = new Plottable.Components.Legend(colorScale);
+  var pie = new Plottable.Plots.Pie()
+  .attr("fill", function(d){ return d.Age_Group; }, colorScale)
+  .addDataset(new Plottable.Dataset(store))
+  .sectorValue(function(d){ return d.Total; } )
+  .labelsEnabled(true)
+  .labelFormatter(function(n){ return "" ;});
+  new Plottable.Components.Table([[pie, legend]]).renderTo("#image2");
+}
+  </script>
+</html>

@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>Image1</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/plottable.js/1.6.1/plottable.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/plottable.js/1.6.1/plottable.min.css">
+</head>
+<body>
+  <svg id="image1"></svg>
+  <script type="text/javascript">
+  
+  d3.select("body").append("p").text("Chart showing TBI Age vs Post_Max_Days by Age Group wise.");
+  d3.select("body").append("p").text("Stacked Bar Plot.");
+    var data = [
+     { agegroup: "0 to 4", postmaxdays: 1404 },
+	 { agegroup: "5 to 14", postmaxdays: 884 },
+     { agegroup: "15 to 17", postmaxdays: 2101 },
+	 { agegroup: "18 to 24", postmaxdays: 37 },
+	 { agegroup: "25 to 34", postmaxdays: 640 },
+	 { agegroup: "35 to 44", postmaxdays: 757 },
+	 { agegroup: "45 to 64", postmaxdays: 196 },
+	 
+	 { agegroup: "0 to 4", postmaxdays: 987 },
+	 { agegroup: "5 to 14", postmaxdays: 765 },
+     { agegroup: "15 to 17", postmaxdays: 0 },
+	 { agegroup: "18 to 24", postmaxdays: 1437 },
+	 { agegroup: "25 to 34", postmaxdays: 1227 },
+	 { agegroup: "35 to 44", postmaxdays: 1203 },
+	 { agegroup: "45 to 64", postmaxdays: 1176 },
+	 
+	 { agegroup: "0 to 4", postmaxdays: 420 },
+	 { agegroup: "5 to 14", postmaxdays: 1955 },
+     { agegroup: "15 to 17", postmaxdays: 844 },
+	 { agegroup: "18 to 24", postmaxdays: 463 },
+	 { agegroup: "25 to 34", postmaxdays: 75 },
+	 { agegroup: "35 to 44", postmaxdays: 640 },
+	 { agegroup: "45 to 64", postmaxdays: 1343 },
+	 
+	 { agegroup: "0 to 4", postmaxdays: 963 },
+	 { agegroup: "5 to 14", postmaxdays: 963 },
+     { agegroup: "15 to 17", postmaxdays: 37 },
+	 { agegroup: "18 to 24", postmaxdays: 0 },
+	 { agegroup: "25 to 34", postmaxdays: 640 },
+	 { agegroup: "35 to 44", postmaxdays: 1227 },
+	 { agegroup: "45 to 64", postmaxdays: 340 },
+	 
+	 { agegroup: "0 to 4", postmaxdays: 1832 },
+	 { agegroup: "5 to 14", postmaxdays: 0 },
+     { agegroup: "15 to 17", postmaxdays: 1364 },
+	 { agegroup: "18 to 24", postmaxdays: 844 },
+	 { agegroup: "25 to 34", postmaxdays: 0 },
+	 { agegroup: "35 to 44", postmaxdays: 1434 },
+	 { agegroup: "45 to 64", postmaxdays: 104 },
+	 
+	 { agegroup: "0 to 4", postmaxdays: 765 },
+	 { agegroup: "5 to 14", postmaxdays: 1364 },
+     { agegroup: "15 to 17", postmaxdays: 963 },
+	 { agegroup: "18 to 24", postmaxdays: 1914 },
+	 { agegroup: "25 to 34", postmaxdays: 463 },
+	 { agegroup: "35 to 44", postmaxdays: 772 },
+	 { agegroup: "45 to 64", postmaxdays: 1203 },
+	 
+	 { agegroup: "0 to 4", postmaxdays: 1404 },
+	 { agegroup: "5 to 14", postmaxdays: 844 },
+     { agegroup: "15 to 17", postmaxdays: 1955 },
+	 { agegroup: "18 to 24", postmaxdays: 1304 },
+	 { agegroup: "25 to 34", postmaxdays: 717 },
+	 { agegroup: "35 to 44", postmaxdays: 864 },
+	 { agegroup: "45 to 64", postmaxdays: 1251 }
+    ];
+    var dataSet = new Plottable.Dataset(data, { name: "POST_max_days" });
+    var studentData = [
+      { agegroup: "0 to 4", agetbi: 3 },
+      { agegroup: "5 to 14", agetbi: 18 },
+      { agegroup:"15 to 17", agetbi: 9 },
+      { agegroup: "18 to 24", agetbi: 27 },
+      { agegroup: "25 to 34", agetbi: 27 },
+      { agegroup: "35 to 44", agetbi: 36 },
+	  { agegroup: "45 to 64", agetbi: 53 },
+	  
+	  { agegroup: "0 to 4", agetbi: 2 },
+      { agegroup: "5 to 14", agetbi: 7 },
+      { agegroup:"15 to 17", agetbi: 17 },
+      { agegroup: "18 to 24", agetbi: 22 },
+      { agegroup: "25 to 34", agetbi: 31 },
+      { agegroup: "35 to 44", agetbi: 39 },
+	  { agegroup: "45 to 64", agetbi: 56 },
+	  
+	  { agegroup: "0 to 4", agetbi: 8 },
+      { agegroup: "5 to 14", agetbi: 9 },
+      { agegroup:"15 to 17", agetbi: 16 },
+      { agegroup: "18 to 24", agetbi: 25 },
+      { agegroup: "25 to 34", agetbi: 25 },
+      { agegroup: "35 to 44", agetbi: 48 },
+	  { agegroup: "45 to 64", agetbi: 61 },
+	  
+	  { agegroup: "0 to 4", agetbi: 0 },
+      { agegroup: "5 to 14", agetbi: 4 },
+      { agegroup:"15 to 17", agetbi: 18 },
+      { agegroup: "18 to 24", agetbi: 18 },
+      { agegroup: "25 to 34", agetbi: 26 },
+      { agegroup: "35 to 44", agetbi: 42 },
+	  { agegroup: "45 to 64", agetbi: 48 },
+	  
+	  { agegroup: "0 to 4", agetbi: 7 },
+      { agegroup: "5 to 14", agetbi: 16 },
+      { agegroup:"15 to 17", agetbi: 20 },
+      { agegroup: "18 to 24", agetbi: 26 },
+      { agegroup: "25 to 34", agetbi: 35 },
+      { agegroup: "35 to 44", agetbi: 33 },
+	  { agegroup: "45 to 64", agetbi: 52 }
+    ];
+    var studentDataSet = new Plottable.Dataset(studentData, { name: "Age TBI" });
+	
+	var colorScale = new Plottable.Scales.Color();
+  var legend = new Plottable.Components.Legend(colorScale);
+	
+    var plot = new Plottable.Plots.Line();
+    plot.addDataset(dataSet);
+    var xAccessor = function(datum, index, dataset) {
+      return datum.agegroup;
+    };
+    var xScale = new Plottable.Scales.Category();
+    plot.x(xAccessor, xScale);
+    var yScale = new Plottable.Scales.Linear();
+    var yAccessor = function(datum, index, dataset) {
+      return datum.postmaxdays;
+    };
+    plot.y(yAccessor, yScale);
+    var yagetbiScale = new Plottable.Scales.Linear();
+    var barPlot = new Plottable.Plots.Bar();
+    barPlot.addDataset(studentDataSet);
+    barPlot.x(function(d) { return d.agegroup; }, xScale);
+    barPlot.y(function(d) { return d.agetbi; }, yagetbiScale);
+    barPlot.attr('opacity', 0.3).attr("fill","americanrose");
+    var xAxis = new Plottable.Axes.Category(xScale, "bottom");
+    var yAxis = new Plottable.Axes.Numeric(yScale, "left");
+    var xLabel = new Plottable.Components.AxisLabel("Age Group");
+    var yLabel = new Plottable.Components.AxisLabel(dataSet.metadata().name, 270);
+    var yagetbiAxis = new Plottable.Axes.Numeric(yagetbiScale, "left");
+    var yagetbiLabel = new Plottable.Components.AxisLabel(studentDataSet.metadata().name, 270);
+    var group = new Plottable.Components.Group([ barPlot, plot ]);
+    var table = new Plottable.Components.Table([
+      [yLabel, yAxis, group, yagetbiAxis, yagetbiLabel],
+      [null, null, xAxis, null, null],
+      [null, null, xLabel, null, null ],[legend]
+    ]);
+    table.renderTo("svg#image1");
+  </script>
+</body>
+</html>
