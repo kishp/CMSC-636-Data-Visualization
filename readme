@@ -1,0 +1,21 @@
+Tool used for Visualization: Plottable JS
+Total number of visualizations created: 4
+Visualization Types:
+a.	Stacked Bar Plot
+b.	Pie Chart
+c.	Stacked Bar Plot with Pointer Interaction. Hover mouse pointer over the Bars.
+d.	Area Plot
+Dataset worked on: Electronic Health Record Data
+Visualization Descriptions:
+a.	Stacked Bar Plot:
+•	Plotted the Stacked Bar using Plottable JS visualization tool. The chart shows the TBI Age vs Post_Max_Days by Age Group wise.
+•	The Post_Max_Days are demoted by the Blue Lines and the TBI Age is denoted by the Black Bars.
+b.	Pie Chart:
+•	Pie chart shows the number of patients suffered from TBI according to their Patient ID.
+•	The legend is shown for the Patient IDs.
+c.	Stacked Bar Plot with Pointer Interaction. Hover mouse pointer over the Bars:
+•	Stacked Bar Plot with Pointer Interaction. Hover mouse pointer over the Bars chart shows the TBI Age vs Post_Max_Days by Age Group wise.
+•	User can hover the mouse over the bars to see the selection effect.
+d.	Area plot:
+•	Area plot shows the number of patients suffered from TBI according to their Patient ID.
+•	The area plot is simply the visualization which shows some area covered by the actual data.
